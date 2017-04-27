@@ -1,0 +1,32 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">0dp</dimen>
+    <dimen name="activity_vertical_margin">0dp</dimen>
+    <dimen name="column_width">160dp</dimen>
+
+
+    <dimen name="grid_column_width">180dp</dimen>
+    <dimen name="image_height_poster">240dp</dimen>
+    <dimen name="shadow_height_poster">130dp</dimen>
+
+    <dimen name="dec_text_height">40dp</dimen>
+    <dimen name="image_des_thumb">200dp</dimen>
+    <dimen name="rectangle_stroke_width">3dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="item_offset">10dp</dimen>
+    <dimen name="detail_backdrop_height">250dp</dimen>
+    <dimen name="backdrop_title">30dp</dimen>
+    <dimen name="backdrop_subtitle">18dp</dimen>
+    <dimen name="card_album_radius">0dp</dimen>
+    <dimen name="dimen_15dp">15dp</dimen>
+    <dimen name="padding_5dp">5dp</dimen>
+    <dimen name="dimen_12dp">12dp</dimen>
+    <dimen name="dimen_20dp">20dp</dimen>
+    <dimen name="dimen_30dp">30dp</dimen>
+    <dimen name="dimen_10dp">10dp</dimen>
+
+
+    <!--Text-->
+    <dimen name="poster_title_text_size">27sp</dimen>
+    <dimen name="text_rating">16sp</dimen>
+</resources>

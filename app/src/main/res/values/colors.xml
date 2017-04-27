@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#453b43</color>
+    <color name="colorPrimaryDark">#33282b</color>
+    <color name="colorAccent">#4090ff</color>
+
+    <color name="album_title">#4c4c4c</color>
+
+    <color name="custom_toast_red">#dc2748</color>
+    <color name="white">#FFFFFF</color>
+</resources>

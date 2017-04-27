@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="pref_movie_type_lables">
+
+        <item>@string/pref_type_movie_popular</item>
+        <item>@string/pref_type_movie_upcoming</item>
+        <item>@string/pref_type_movie_topRated</item>
+
+    </array>
+
+
+    <array name="pref_movie_type_lables_value">
+        <item>@string/pref_type_movie_popular_value</item>
+        <item>@string/pref_type_movie_upcoming_value</item>
+        <item>@string/pref_type_movie_topRated_value</item>
+
+    </array>
+
+</resources>

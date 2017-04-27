@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_view_poster_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/image_height_poster" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/shadow_height_poster"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/descrit_background_text" />
+
+                <TextView
+                    android:id="@+id/tv_title_descript"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:focusable="true"
+                    android:lines="1"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:padding="@dimen/padding_5dp"
+                    android:scrollHorizontally="true"
+                    android:text="Title"
+                    android:textColor="#FFF"
+                    android:textSize="@dimen/poster_title_text_size"
+                    android:textStyle="bold" />
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_contain_imgThumb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/frame_layout"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:id="@+id/img_view_thumb"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/image_des_thumb"
+                    android:layout_weight="1"
+                    android:padding="5dp" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_ratingbar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_releaseDate_descript"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dec_text_height"
+                        android:layout_margin="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_background_rect"
+                        android:drawableLeft="@drawable/ic_today_black_24dp"
+                        android:padding="@dimen/dimen_10dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_rating" />
+
+                    <TextView
+                        android:id="@+id/tv_movie_ratings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_background_rect"
+                        android:drawableLeft="@drawable/ic_star"
+                        android:padding="@dimen/dimen_10dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_rating" />
+
+
+                    <TextView
+                        android:id="@+id/tv_movie_runtime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_background_rect"
+                        android:drawableLeft="@drawable/ic_timelapse_black_24dp"
+                        android:padding="@dimen/dimen_10dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_rating" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/frame_layout_snd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_contain_imgThumb">
+
+                <TextView
+                    android:id="@+id/tv_description_descript"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:scrollbars="vertical"
+                    android:text="Title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_rating" />
+
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

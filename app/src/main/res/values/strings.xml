@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">MoviesList</string>
+    <string name="types">Types</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="popular">popular</string>
+    <string name="top_rated">Top rated</string>
+    <string name="background_title">Love Movie</string>
+    <string name="background_subTitle">These are some Movie</string>
+
+    <string name="connection_slow"> No Internet Connection .</string>
+
+    <string name="extra_movie_title">Movie_Title</string>
+    <string name="extra_movie_overview">Movie_Overview</string>
+    <string name="extra_movie_releaseDate">Movie_ReleaseDate</string>
+    <string name="extra_image_url">img_url</string>
+    <string name="extra_movie_ratings">Movie_Ratings</string>
+    <string name="extra_backdrop_url">img_backdrop_url</string>
+    <string name="collapsing_bar_title">Movies</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <string-array name="pref_example_list_titles">
+        <item>Upcoming</item>
+        <item>Top Rated</item>
+        <item>Popular</item>
+    </string-array>
+
+    <string name="pref_type_movie_label">Movie Types</string>
+
+
+    <string name="pref_type_movie_popular">Popular</string>
+    <string name="pref_type_movie_upcoming">Upcoming</string>
+    <string name="pref_type_movie_topRated">Top Rated</string>
+
+    <string name="pref_type_movie_key">types</string>
+
+    <string name="pref_type_movie_popular_value">popular</string>
+    <string name="pref_type_movie_upcoming_value">upcoming</string>
+    <string name="pref_type_movie_topRated_value">top_rated</string>
+
+
+    <!-- Example settings for Data & Sync -->
+    <string name="settings_menu">Settings</string>
+    <string name="extra_movie_id">Movie_ID</string>
+
+
+</resources>
