@@ -2,22 +2,20 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_description"
+    android:id="@+id/activity_favorite_movie"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="com.omniroid.tapan.movieslist.DescriptionActivity">
-
+    tools:context="com.omniroid.tapan.movieslist.FavoriteMovieActivity">
 
     <android.support.design.widget.AppBarLayout
-        android:visibility="gone"
-        android:id="@+id/general_appbar"
+        android:id="@+id/appBar_ll"
         android:background="@null"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
         <android.support.v7.widget.Toolbar
-            android:id="@+id/tb_descr"
+            android:id="@+id/tb_fav"
             app:titleTextColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize">
@@ -25,10 +23,12 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include
+
+    <android.support.v7.widget.RecyclerView
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_height="match_parent"
+        android:id="@+id/recyclerViewTasks"
         android:layout_width="match_parent"
-        layout="@layout/content_main_desript"/>
+        android:layout_height="match_parent"
+        android:paddingBottom="8dp"/>
 
 </android.support.design.widget.CoordinatorLayout>

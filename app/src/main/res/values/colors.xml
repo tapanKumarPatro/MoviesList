@@ -8,4 +8,6 @@
 
     <color name="custom_toast_red">#dc2748</color>
     <color name="white">#FFFFFF</color>
+    <color name="yellow">#e5ed45</color>
+
 </resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_10dp"
+    android:layout_marginLeft="@dimen/dimen_10dp"
+    android:layout_marginRight="@dimen/dimen_10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginLeft="@dimen/padding_5dp"
+        android:id="@+id/review_text_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/text_20sp" />
+
+    <ScrollView
+        android:layout_marginTop="@dimen/padding_5dp"
+        android:id="@+id/scroll_reviews"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/scroll_size_review">
+
+        <TextView
+            android:id="@+id/review_text_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:scrollbars="vertical"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_rating" />
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/review_text_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/review_text_link"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/text_20sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_20dp"
+        android:background="@drawable/ic_remove_black_24dp" />
+
+</LinearLayout>

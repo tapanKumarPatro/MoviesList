@@ -1,4 +1,4 @@
-package com.omniroid.tapan.movieslist;
+package com.omniroid.tapan.movieslist.model;
 
 import java.io.Serializable;
 

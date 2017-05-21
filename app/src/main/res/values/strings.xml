@@ -40,9 +40,17 @@
     <string name="pref_type_movie_topRated_value">top_rated</string>
 
 
+    <string name="link_in_description">Link</string>
+
     <!-- Example settings for Data & Sync -->
     <string name="settings_menu">Settings</string>
     <string name="extra_movie_id">Movie_ID</string>
+    <string name="review_text_link">Link</string>
+    <string name="trailers">Trailers</string>
+    <string name="overView">Description</string>
+    <string name="credits">Credits</string>
+    <string name="reviews">Reviews</string>
+    <string name="favorite_movies">Favorite Movies</string>
 
 
 </resources>

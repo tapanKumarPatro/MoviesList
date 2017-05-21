@@ -1,5 +1,6 @@
 package com.omniroid.tapan.movieslist;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,6 +26,7 @@ import android.widget.Toast;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.omniroid.tapan.movieslist.adapter.MovieGridAdapter;
+import com.omniroid.tapan.movieslist.model.Movies;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     private GridView gridView;
     private MovieGridAdapter movieGridAdapter;
     private SharedPreferences preferences;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         Toolbar toolbar = (Toolbar) findViewById(R.id.tb_lay);
         setSupportActionBar(toolbar);
 
+        progressDialog = new ProgressDialog(this);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         preferences.registerOnSharedPreferenceChangeListener(this);
@@ -108,6 +112,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             case R.id.settings:
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 return true;
+            case R.id.favMovie:
+                startActivity(new Intent(MainActivity.this, FavoriteMovieActivity.class));
             default:
                 return super.onOptionsItemSelected(item);
         }

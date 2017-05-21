@@ -16,8 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.omniroid.tapan.movieslist.DescriptionActivity;
-import com.omniroid.tapan.movieslist.Movies;
 import com.omniroid.tapan.movieslist.R;
+import com.omniroid.tapan.movieslist.model.Movies;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -66,12 +66,20 @@ public class MovieGridAdapter extends ArrayAdapter<Movies> {
 
         Picasso.with(getContext())
                 .load(url)
+                .placeholder(R.drawable.user_placeholder)
+                .error(R.drawable.user_placeholder_error)
                 .fit()
                 .into(mImageView);
 
         String image_backdrop_uri = "https://image.tmdb.org/t/p/w500";
 
         final String backdrop_Url = image_backdrop_uri + String.valueOf(movies.getBackdrop_path());
+
+        /*if (context instanceof ReciptHistoryActivity) {
+            ((ReciptHistoryActivity) context).startTranGettingData(transItem.getVendorTxCode()
+                    ,transItem.getOrderNo(),transItem.getPmethod(),transItem.getDate()
+                    ,transItem.getTime(),transItem.getAmount());
+        }*/
 
         mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
