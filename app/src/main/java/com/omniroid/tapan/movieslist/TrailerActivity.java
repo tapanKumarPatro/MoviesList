@@ -14,6 +14,8 @@ import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
 
+import static com.omniroid.tapan.movieslist.AppConfig.YOUTUBE_API_KEY;
+
 public class TrailerActivity extends AppCompatActivity {
 
 
@@ -28,6 +30,7 @@ public class TrailerActivity extends AppCompatActivity {
         mListTrailers = (ListView) findViewById(R.id.list_trailer);
         Bundle bundle = getIntent().getExtras();
         String movie_id = bundle.getString(getString(R.string.extra_movie_id));
+        if (YOUTUBE_API_KEY != null)
         trailer_url = String.format(AppConfig.MOVIE_TRAILER_URL,movie_id);
         //trailer_url = "https://api.themoviedb.org/3/movie/"+movie_id+"/videos?api_key=bc84ffcdd59a9135a9e4418c7805a9f9&language=en-US";
         getMovieTrailers();

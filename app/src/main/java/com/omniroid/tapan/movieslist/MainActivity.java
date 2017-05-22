@@ -39,6 +39,8 @@ import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
+import static com.omniroid.tapan.movieslist.AppConfig.API_KEY;
+
 public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private List<Movies> moviesList;
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
+
         int mCurrentPosition = gridView.getFirstVisiblePosition();
         mPosition = mCurrentPosition;
         if (mPosition != GridView.INVALID_POSITION) {
@@ -101,7 +104,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-
         if (mPosition != GridView.INVALID_POSITION) {
             gridView.smoothScrollToPosition(mPosition);
         }
@@ -158,9 +160,14 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     private void init() {
+
         movieGridAdapter = new MovieGridAdapter(this, R.layout.list_item_grid, moviesList);
         gridView.setAdapter(movieGridAdapter);
         movieGridAdapter.notifyDataSetChanged();
+        if (mPosition != GridView.INVALID_POSITION) {
+
+            gridView.smoothScrollToPosition(mPosition);
+        }
         //Log.v("currPost", String.valueOf(currentPosition));
 
 /*
@@ -174,10 +181,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         movieGridRecyclerView.setAdapter(movieGridRecyclerAdapter);
         movieGridRecyclerAdapter.notifyDataSetChanged();*/
 
-        //int position = gridmanger.pos
-
-       //int index =gridmanger.pos
-        //Log.v("postionOfScroll", String.valueOf(index));
 
     }
 
@@ -234,6 +237,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         movieType = sharedPreferences.getString(getString(R.string.pref_type_movie_key)
                 , getString(R.string.pref_type_movie_popular_value));
 
+       if (API_KEY != null)
         Build_url = String.format(AppConfig.BASE_URL, movieType); //popular top_rated upcoming
         Log.v("BuildURl", Build_url);
         if (isOnline()) {

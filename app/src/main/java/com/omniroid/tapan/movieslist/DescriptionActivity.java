@@ -45,6 +45,9 @@ import java.util.List;
 import cz.msebera.android.httpclient.Header;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
+import static com.omniroid.tapan.movieslist.AppConfig.API_KEY;
+import static com.omniroid.tapan.movieslist.AppConfig.YOUTUBE_API_KEY;
+
 
 public class DescriptionActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
@@ -151,8 +154,10 @@ public class DescriptionActivity extends YouTubeBaseActivity implements YouTubeP
         movie_id = bundle.getString(getString(R.string.extra_movie_id));
 
         //trailer_urls = "https://api.themoviedb.org/3/movie/" + movie_id + "/videos?api_key=bc84ffcdd59a9135a9e4418c7805a9f9&language=en-US";
+        if (YOUTUBE_API_KEY != null)
         trailer_urls = String.format(AppConfig.MOVIE_TRAILER_URL,movie_id);
 
+        if (API_KEY != null)
         descript_url = String.format(AppConfig.MOVIE_DETAIL_URL, movie_id);
         Typeface custom_font_bold = Typeface.createFromAsset(getAssets(), "fonts/caviardreams_bold.ttf");
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/caviardreams.ttf");
@@ -174,9 +179,10 @@ public class DescriptionActivity extends YouTubeBaseActivity implements YouTubeP
         mTextOverView.setText(movie_overView);
         mTextRleaseDate.setText(" " + movie_releaseD);
 
-        REVIEW_URL = String.format(AppConfig.REVIEW_MOVIE_URL, movie_id);
-        CASTING_URL = String.format(AppConfig.CREDITS_MOVIE_URL, movie_id);
-
+        if (API_KEY != null) {
+            REVIEW_URL = String.format(AppConfig.REVIEW_MOVIE_URL, movie_id);
+            CASTING_URL = String.format(AppConfig.CREDITS_MOVIE_URL, movie_id);
+        }
 
         Picasso.with(this)
                 .load(imageUrl)

@@ -46,7 +46,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:padding="@dimen/padding_5dp"
                     android:scrollHorizontally="true"
-                    android:text="Title"
+                    android:text=""
                     android:textColor="#FFF"
                     android:textSize="@dimen/poster_title_text_size"
                     android:textStyle="bold" />
