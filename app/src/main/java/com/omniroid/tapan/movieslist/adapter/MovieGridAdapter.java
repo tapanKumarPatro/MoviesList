@@ -23,7 +23,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 /**
- * Created by hp on 4/20/2017.
+ * Created by DELL on 5/22/2017.
  */
 
 public class MovieGridAdapter extends ArrayAdapter<Movies> {

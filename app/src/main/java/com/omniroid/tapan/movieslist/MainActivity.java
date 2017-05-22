@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
@@ -26,6 +27,7 @@ import android.widget.Toast;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.omniroid.tapan.movieslist.adapter.MovieGridAdapter;
+import com.omniroid.tapan.movieslist.adapter.MovieGridRecyclerAdapter;
 import com.omniroid.tapan.movieslist.model.Movies;
 
 import org.json.JSONArray;
@@ -43,10 +45,22 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     private String Build_url;
     private String movieType = "";
 
+    private int someVarA;
+    private String someVarB;
+
+    private static final String SELECTED_KEY = "selected_position";
+    private int mPosition = GridView.INVALID_POSITION;
+    //private int mPosition = 0;
+    private int currentPosition = 0;
+
     private GridView gridView;
     private MovieGridAdapter movieGridAdapter;
     private SharedPreferences preferences;
     private ProgressDialog progressDialog;
+
+    private MovieGridRecyclerAdapter movieGridRecyclerAdapter;
+    private RecyclerView movieGridRecyclerView;
+    private String SAVED_LAYOUT_MANAGER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         Toolbar toolbar = (Toolbar) findViewById(R.id.tb_lay);
         setSupportActionBar(toolbar);
 
+
+        gridView = (GridView) findViewById(R.id.grid_layout);
         progressDialog = new ProgressDialog(this);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -68,6 +84,34 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             createCustomToast();
         }
 
+        if (savedInstanceState != null && savedInstanceState.containsKey(SELECTED_KEY)) {
+            // The listview probably hasn't even been populated yet.  Actually perform the
+            // swapout in onLoadFinished.
+            mPosition = savedInstanceState.getInt(SELECTED_KEY);
+        }
+
+    }
+    //mPosition = gridView.getFirstVisiblePosition();
+    //outState.putInt(SELECTED_KEY,
+    //       mPosition);
+    //outState.putStringArrayList("movies",moviesList);
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        if (mPosition != GridView.INVALID_POSITION) {
+            outState.putInt(SELECTED_KEY, mPosition);
+        }
+        super.onSaveInstanceState(outState);
+    }
+    //mPosition = savedInstanceState.getInt(SELECTED_KEY);
+    //gridView.smoothScrollToPosition(mPosition);
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+
+        if (mPosition != GridView.INVALID_POSITION) {
+            gridView.smoothScrollToPosition(mPosition);
+        }
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     private void createCustomToast() {
@@ -121,10 +165,27 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
     private void init() {
 
-        gridView = (GridView) findViewById(R.id.grid_layout);
         movieGridAdapter = new MovieGridAdapter(this, R.layout.list_item_grid, moviesList);
         gridView.setAdapter(movieGridAdapter);
         movieGridAdapter.notifyDataSetChanged();
+
+        //Log.v("currPost", String.valueOf(currentPosition));
+
+/*
+        int mNoOfColumns = AppConfig.calculateNoOfColumns(getApplicationContext());
+
+        movieGridRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_movie_grid);
+        //int numberOfColumns = 2;
+        RecyclerView.LayoutManager gridmanger = new GridLayoutManager(this, mNoOfColumns);
+        movieGridRecyclerView.setLayoutManager(gridmanger);
+        movieGridRecyclerAdapter = new MovieGridRecyclerAdapter(this,moviesList);
+        movieGridRecyclerView.setAdapter(movieGridRecyclerAdapter);
+        movieGridRecyclerAdapter.notifyDataSetChanged();*/
+
+        //int position = gridmanger.pos
+
+       //int index =gridmanger.pos
+        //Log.v("postionOfScroll", String.valueOf(index));
 
     }
 

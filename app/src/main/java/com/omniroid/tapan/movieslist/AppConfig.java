@@ -9,8 +9,8 @@ import android.util.DisplayMetrics;
 
 public class AppConfig {
 
-    private static String API_KEY = "";
-    public static final String YOUTUBE_API_KEY = "" ;
+    private static String API_KEY = "bc84ffcdd59a9135a9e4418c7805a9f9";
+    public static final String YOUTUBE_API_KEY = "AIzaSyDUUpnbjyF2zrVleUHVs7nchnvty50Cy74" ;
 
     public static final String MOVIE_TRAILER_URL = "https://api.themoviedb.org/3/movie/%s/videos?api_key="+API_KEY;
 
