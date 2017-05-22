@@ -70,13 +70,12 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         Toolbar toolbar = (Toolbar) findViewById(R.id.tb_lay);
         setSupportActionBar(toolbar);
 
-
-        gridView = (GridView) findViewById(R.id.grid_layout);
         progressDialog = new ProgressDialog(this);
-
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         preferences.registerOnSharedPreferenceChangeListener(this);
         loadMovieTypeFromPreference(preferences);
+
+        gridView = (GridView) findViewById(R.id.grid_layout);
 
         if (isOnline()) {
             getMoviesData();
@@ -85,25 +84,20 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         }
 
         if (savedInstanceState != null && savedInstanceState.containsKey(SELECTED_KEY)) {
-            // The listview probably hasn't even been populated yet.  Actually perform the
-            // swapout in onLoadFinished.
             mPosition = savedInstanceState.getInt(SELECTED_KEY);
         }
 
     }
-    //mPosition = gridView.getFirstVisiblePosition();
-    //outState.putInt(SELECTED_KEY,
-    //       mPosition);
-    //outState.putStringArrayList("movies",moviesList);
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
+        int mCurrentPosition = gridView.getFirstVisiblePosition();
+        mPosition = mCurrentPosition;
         if (mPosition != GridView.INVALID_POSITION) {
             outState.putInt(SELECTED_KEY, mPosition);
         }
         super.onSaveInstanceState(outState);
     }
-    //mPosition = savedInstanceState.getInt(SELECTED_KEY);
-    //gridView.smoothScrollToPosition(mPosition);
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -164,11 +158,9 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     private void init() {
-
         movieGridAdapter = new MovieGridAdapter(this, R.layout.list_item_grid, moviesList);
         gridView.setAdapter(movieGridAdapter);
         movieGridAdapter.notifyDataSetChanged();
-
         //Log.v("currPost", String.valueOf(currentPosition));
 
 /*
